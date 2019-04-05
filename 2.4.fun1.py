@@ -1,5 +1,5 @@
 x = float(input('x: '))
-if 5.7 >= x >= -2.4:
+if -2.4 <= x <= 5.7:
     print(x**2)
 else:
     print(4)

@@ -1,8 +1,5 @@
 def parity(x):
-    if x % 2 == 0:
-        return 'true'
-    else:
-        return 'false'
+    return x % 2 == 0
 
 
 x = int(input('x: '))
