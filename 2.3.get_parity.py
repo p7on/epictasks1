@@ -1,11 +1,9 @@
-x = int(input())
-
-
 def parity(x):
     if x % 2 == 0:
-        return('true')
+        return 'true'
     else:
-        return('false')
+        return 'false'
 
 
+x = int(input('x: '))
 print(parity(x))

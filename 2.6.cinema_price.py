@@ -1,3 +1,7 @@
+'''
+not ready
+'''
+
 film = input('Select movie: ')
 date = input('Today or tommorow?: ')
 time = int(input('Choose time: '))
