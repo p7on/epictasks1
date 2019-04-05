@@ -1,12 +1,9 @@
-x, y = int(input()), int(input())
-
-
 def maximum(x, y):
     if x > y:
-        return(x)
-    elif y > x:
-        return(y)
+        return x
     else:
-        return('try one more time')
+        return y
 
-print(maximum(x, y))
+
+x, y = int(input('x: ')), int(input('y: '))
+print('maximum:', maximum(x, y))
