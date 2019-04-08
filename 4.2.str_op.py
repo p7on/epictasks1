@@ -7,10 +7,3 @@ if not s.isalpha():
 if len(s) > 4:
     print(s.lower())
 print('О' + s[1:])
-
-'''
-или через списки:
-s.list()
-s[1] = 'О'
-"".join(s)
-'''

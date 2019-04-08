@@ -5,8 +5,8 @@ letter = random.choice(word)  # рандомная буква
 letter_index = word.index(letter)  # находим индекс рандомной буквы
 word1 = list(word)  # преобразуем выбранное слово в список
 word1[letter_index] = '?'  # заменяем рандомную букву на ?
-newword = "".join(word1)
-print(newword)
+new_word = "".join(word1)
+print(new_word)
 
 guess = input('Введите букву: ')
 if guess == letter:
