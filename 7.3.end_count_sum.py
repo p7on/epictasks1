@@ -4,7 +4,7 @@ while True:
         n = input('Enter the number or stop to exit: ')
         if n == 'stop':
             break
-        elif int(n) > 0:
+        else:
             result += int(n)
     except ValueError:
         print('Error')
