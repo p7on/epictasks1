@@ -7,14 +7,21 @@ s = '''В разные эпохи и у разных народов число �
 уже в 1737 году.'''
 
 s = s.split()
-print(s)
+count = 0
 
-k = 0.0
 
-for x in s:
-    if x.isdigit():
-        k += int(x)
+for i in s:
+    try:
+        num = float(i)
+        count += num
+    except:
+        pass
+
+print(count)
+'''
+for i in s:
+    if i.isdigit()
+        k += i
     else:
         continue
-
-print(k)
+        '''

@@ -1,11 +1,11 @@
 result = 0
 while True:
     try:
-        n = input('Enter the number or stop to exit: ')
+        n = input('Enter the number or stop to exit: ').lower()
         if n == 'stop':
             break
         else:
-            result += int(n)
+            result += float(n)
     except ValueError:
         print('Error')
 print(result)
