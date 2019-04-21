@@ -8,20 +8,17 @@ s = '''В разные эпохи и у разных народов число �
 
 s = s.split()
 count = 0
-
+k = []
 
 for i in s:
     try:
         num = float(i)
+        print(num)
+        k.append(num)
         count += num
-    except:
+    except Exception:
         pass
 
-print(count)
-'''
-for i in s:
-    if i.isdigit()
-        k += i
-    else:
-        continue
-        '''
+# print(num)
+print('Sum of the numbers in the text:', count)
+print('Maximum number is:', max(k))
