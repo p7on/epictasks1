@@ -57,6 +57,7 @@ if __name__ == '__main__':
     add_button = Button(window, text='Add task', width=20, command=create_file).grid(row=3, column=0, columnspan=3, sticky=W + E, padx=50)
     show_button = Button(window, text='Show tasks', width=20, command=load_file).grid(row=4, column=0, columnspan=3, sticky=W + E, padx=50)
     exit_button = Button(window, text='Exit', width=20, command=exit).grid(row=5, column=0, columnspan=3, sticky=W + E, padx=50)
+    result_text = Text(window, width=30, height=10).grid(row=0, rowspan=6, column=3)
 
     window.mainloop()
 
