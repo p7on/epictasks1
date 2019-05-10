@@ -85,4 +85,3 @@ if __name__ == '__main__':
 
     window.mainloop()
 
-#, width=30, height=10
