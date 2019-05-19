@@ -1,16 +1,21 @@
 from tkinter import *
 import json
+import os.path
 
 TODO = []
+
+file = os.path.isfile('data.json')
 
 
 def create_file():
     '''
-    Fuction open data.json file, load content from it to TODO list, create dictionaries and add it to TODO list, after adding closes the file
-    '''
-    with open('data.json') as data_json:
-        TODO = json.load(data_json)
-        data_json.close()
+    Fuction open data.json file, load content from it to TODO list, create dictionaries and add it to TODO list, after adding closes the file'''
+    if file:
+        with open('data.json') as data_json:
+            TODO = json.load(data_json)
+            data_json.close()
+    else:
+        TODO = []
     Dicti = {}
     entry_name = task_entry.get()
     Dicti['Task_name'] = entry_name
@@ -46,6 +51,31 @@ def exit():
     print('Bye!')
 
 
+def some_error():
+    st = []
+    if task_entry.get().replace(" ", "") == "":
+        st += 'Вы_не_ввели_задание!\n'
+    if category_entry.get().replace(" ", "") == "":
+        st += 'Вы_не_ввели_категорию!\n'
+    if time_entry.get().replace(" ", "") == "":
+        st += 'Вы_не_ввели_время!\n'
+    if st != []:
+        st += 'Задача_не_добавлена!'
+    return st
+
+
+def add_click():
+    st = some_error()
+    result_text.delete(1.0, END)
+    if st == []:
+        create_file()
+        task_entry.delete(0, END)
+        category_entry.delete(0, END)
+        time_entry.delete(0, END)
+    else:
+        result_text.insert(1.0, st)
+
+
 if __name__ == '__main__':
     window = Tk()
     window.geometry('640x160')  # Set the size of the window
@@ -72,7 +102,7 @@ if __name__ == '__main__':
     time_entry = Entry(window, textvariable=time_variable)
     time_entry.grid(row=2, column=1, columnspan=2, sticky=W + E)
 
-    add_button = Button(window, text='Add task', width=20, command=create_file).grid(row=3, column=1, columnspan=2, sticky=W + E, padx=50)  # Add task button
+    add_button = Button(window, text='Add task', width=20, command=add_click).grid(row=3, column=1, columnspan=2, sticky=W + E, padx=50)  # Add task button
     show_button = Button(window, text='Show tasks', width=20, command=load_file).grid(row=4, column=1, columnspan=2, sticky=W + E, padx=50)  # Show tasks button
     exit_button = Button(window, text='Exit', width=20, command=exit).grid(row=5, column=1, columnspan=2, sticky=W + E, padx=50)  # Exit button
 
@@ -84,4 +114,3 @@ if __name__ == '__main__':
     frame.grid(row=0, rowspan=6, column=3)
 
     window.mainloop()
-

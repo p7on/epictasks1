@@ -1,7 +1,7 @@
 import random
 
 
-def search_number(some_numbers):
+def search_number(put_something):
     counter = 0
     min_index = some_numbers.index(min(some_numbers))
     max_index = some_numbers.index(max(some_numbers))

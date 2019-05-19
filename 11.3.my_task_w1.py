@@ -3,6 +3,9 @@ import json
 
 
 TODO = []
+with open('data.json') as data_json:
+    TODO = json.load(data_json)
+    data_json.close()
 
 
 def create_file():
